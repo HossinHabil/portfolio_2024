@@ -28,14 +28,16 @@ const HomeSection = () => {
         </p>
         <div className="flex items-center gap-5">
           <Link
-            href=""
+            href="https://www.linkedin.com/in/hossin-habil-183866121/"
             className="bg-[#67e9ff] dark:bg-[#57c3ad] p-2 rounded-full text-white dark:text-white"
+            target="_blank"
           >
             <Linkedin />
           </Link>
           <Link
-            href=""
+            href="https://github.com/HossinHabil"
             className="bg-[#67e9ff] dark:bg-[#57c3ad] p-2 rounded-full text-white dark:text-white"
+            target="_blank"
           >
             <Github />
           </Link>

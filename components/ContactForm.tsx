@@ -29,9 +29,10 @@ const ContactForm = () => {
   });
 
   const onSubmit = async (data: z.infer<typeof ContactSchema>) => {
+    console.log(data);
     const res = await sendContactEmail(data);
 
-    if (res === "success") {
+    if (res !== undefined) {
       form.reset();
       toast.success("Message sent successfully!");
     }
