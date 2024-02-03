@@ -8,7 +8,7 @@ const ContactSection = () => {
         <h1 className="text-4xl md:text-4xl lg:text-6xl font-extrabold text-center">
           Get In Touch
         </h1>
-        <p className="text-3xl md:text-4xl">Let's Talk 👋</p>
+        <p className="text-3xl md:text-4xl">Let&apos;s Talk 👋</p>
       </div>
       <ContactForm />
     </section>

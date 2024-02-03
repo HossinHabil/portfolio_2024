@@ -22,7 +22,7 @@ const LatestProjects = () => {
           My Latest Projects
         </h2>
         <p className="text-lg md:text-2xl font-normal dark:text-[#57c3ad]">
-          Some of the projects I've worked on
+          Some of the projects I&apos;ve worked on
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
