@@ -4,8 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import HeaderComponent from "@/components/HeaderComponent";
 import Navbar from "@/components/Navbar";
-import { Toaster } from 'sonner'
-import { Analytics } from '@vercel/analytics/react';
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -33,9 +32,8 @@ export default function RootLayout({
         >
           <HeaderComponent />
           <Navbar />
-          <Toaster position="top-left"/>
+          <Toaster position="top-left" />
           {children}
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
