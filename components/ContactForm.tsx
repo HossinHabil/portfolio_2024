@@ -1,5 +1,6 @@
 "use client";
 
+import { useTransition } from "react";
 import {
   Form,
   FormControl,
@@ -16,8 +17,11 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendContactEmail } from "@/lib/actions";
 import { toast } from "sonner";
+import LoadingSpinner from "./LoadingSpinner";
 
 const ContactForm = () => {
+  const [isPending, startTransition] = useTransition();
+
   const form = useForm<z.infer<typeof ContactSchema>>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
@@ -29,11 +33,20 @@ const ContactForm = () => {
   });
 
   const onSubmit = async (data: z.infer<typeof ContactSchema>) => {
-    const res = await sendContactEmail(data);
-    if (res !== undefined) {
-      form.reset();
-      toast.success("Message sent successfully!");
-    }
+    startTransition(() => {
+      sendContactEmail(data)
+        .then((data) => {
+          if (data === undefined) {
+            form.reset();
+            toast.error("Failed to send message.");
+          }
+          if (data !== undefined) {
+            form.reset();
+            toast.success("Message sent successfully!");
+          }
+        })
+        .catch(() => console.error("Failed to send message."));
+    });
   };
   return (
     <Form {...form}>
@@ -48,7 +61,11 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Enter your name" {...field} className="border-teal-400 placeholder:text-gray-500"/>
+                  <Input
+                    placeholder="Enter your name"
+                    {...field}
+                    className="border-teal-400 placeholder:text-gray-500"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -60,7 +77,11 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Enter your email" {...field} className="border-teal-400 placeholder:text-gray-500"/>
+                  <Input
+                    placeholder="Enter your email"
+                    {...field}
+                    className="border-teal-400 placeholder:text-gray-500"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -73,7 +94,11 @@ const ContactForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Enter your subject" {...field} className="border-teal-400 placeholder:text-gray-500"/>
+                <Input
+                  placeholder="Enter your subject"
+                  {...field}
+                  className="border-teal-400 placeholder:text-gray-500"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -101,7 +126,7 @@ const ContactForm = () => {
           type="submit"
           className="bg-[#67e9ff] hover:bg-[#62d7eb] transition-all dark:bg-accent dark:hover:bg-slate-700 text-white px-7 py-2 w-4/5 border-none rounded-md mx-auto"
         >
-          Submit
+          {isPending ? <LoadingSpinner /> : 'Submit'}
         </Button>
       </form>
     </Form>
