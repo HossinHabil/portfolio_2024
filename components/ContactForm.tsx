@@ -32,6 +32,8 @@ const ContactForm = () => {
     },
   });
 
+  const {isDirty} = form.formState;
+
   const onSubmit = async (data: z.infer<typeof ContactSchema>) => {
     startTransition(() => {
       sendContactEmail(data)
@@ -124,6 +126,7 @@ const ContactForm = () => {
         />
         <Button
           type="submit"
+          disabled={!isDirty}
           className="bg-[#67e9ff] hover:bg-[#62d7eb] transition-all dark:bg-accent dark:hover:bg-slate-700 text-white px-7 py-2 w-4/5 border-none rounded-md mx-auto"
         >
           {isPending ? <LoadingSpinner /> : 'Submit'}
