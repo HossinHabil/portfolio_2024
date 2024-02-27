@@ -4,7 +4,6 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import HeaderComponent from "@/components/HeaderComponent";
-import CookiesBanner from "@/components/CookiesBanner";
 import Navbar from "@/components/Navbar";
 
 import { Toaster } from "sonner";
@@ -39,7 +38,6 @@ export default function RootLayout({
           <Navbar />
           <Toaster position="top-left" />
           {children}
-          <CookiesBanner />
         </ThemeProvider>
         <Analytics />
       </body>
