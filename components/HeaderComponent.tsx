@@ -8,7 +8,7 @@ const HeaderComponent = () => {
   return (
     <header>
       <nav className="flex items-center p-10 max-w-7xl mx-auto">
-        <Link href="/" prefetch={false}>
+        <Link href="/" prefetch={false} className="bg-[#67e9ff] p-2 rounded-full text-white">
           <Code2 />
         </Link>
 

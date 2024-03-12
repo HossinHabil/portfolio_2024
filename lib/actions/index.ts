@@ -8,24 +8,32 @@ import { replyTemplate } from "@/components/emailTempletes/index";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendContactEmail(data: z.infer<typeof ContactSchema>) {
+  const validatedFields = ContactSchema.safeParse(data);
+
+  if (!validatedFields.success) {
+    return { error: "Invalid fields!" };
+  }
+
+  const {name, email, subject, message} = validatedFields.data;
+  
   try {
     const sendEmail = await resend.emails.send({
       from: "mail@hossinhabil.com",
       to: process.env.CONTACT_EMAIL!,
       subject: data.subject,
       html: `
-                <h1>${data.name}</h1>
-                <h2>${data.email}</h2>
-                <h3>${data.subject}</h3>
-                <p>${data.message}</p>
+                <h1>${name}</h1>
+                <h2>${email}</h2>
+                <h3>${subject}</h3>
+                <p>${message}</p>
                 `,
     });
     if (sendEmail.data !== undefined) {
       await resend.emails.send({
         from: "mail@hossinhabil.com",
-        to: data.email,
+        to: email,
         subject: "Thank you for contacting me",
-        html: replyTemplate(data.name),
+        html: replyTemplate(name),
       });
       return sendEmail.data;
     }

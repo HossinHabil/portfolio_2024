@@ -1,6 +1,8 @@
 import { projectsData } from "@/data/prjectsData";
 import React from "react";
 import LatestProjectsItem from "./LatestProjectsItem";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const LatestProjects = () => {
   return (
@@ -26,10 +28,15 @@ const LatestProjects = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-        {projectsData.map((project) => (
+        {projectsData.slice(0, 4).map((project) => (
           <LatestProjectsItem key={project.id} {...project} />
         ))}
       </div>
+      <Link href="/projects" >
+        <Button className="bg-[#67e9ff] hover:bg-[#62d7eb] transition-all dark:bg-accent dark:hover:bg-slate-700 text-white border-none rounded-md mx-auto">
+          View All Projects
+        </Button>
+      </Link>
     </section>
   );
 };
