@@ -1,12 +1,15 @@
 import Link from "next/link";
-import React from "react";
-import { Linkedin, Github } from "lucide-react";
 import Image from "next/image";
+import { Linkedin, Github } from "lucide-react";
+
 import hero_img from "@/images/sections/hero_img.jpg";
 
 const HomeSection = () => {
   return (
-    <section id="home" className="flex flex-col lg:flex-row gap-8 items-center justify-between w-full md:px-8 py-16 md:py-20">
+    <section
+      id="home"
+      className="flex flex-col lg:flex-row gap-8 items-center justify-between w-full md:px-8 py-16 md:py-20 lg:pb-28"
+    >
       <div
         className="absolute inset-x-0 top-28 -z-10 transform-gpu overflow-hidden blur-3xl"
         aria-hidden="true"
@@ -20,23 +23,26 @@ const HomeSection = () => {
         />
       </div>
       <div className="flex flex-col items-center justify-center space-y-3">
-        <h2 className="text-3xl md:text-4xl font-extrabold dark:text-[#57c3ad]">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-content">
           Hossin Habil
         </h2>
-        <p className="text-lg md:text-3xl xl:text-4xl font-medium dark:text-[#57c3ad]">
+        <p
+          className="text-lg md:text-3xl xl:text-4xl font-medium text-content"
+          id="occupation"
+        >
           Front End Web Developer
         </p>
         <div className="flex items-center gap-5">
           <Link
             href="https://www.linkedin.com/in/hossin-habil-183866121/"
-            className="bg-[#67e9ff] dark:bg-[#57c3ad] p-2 rounded-full text-white dark:text-white"
+            className="bg-[#67e9ff] p-2 rounded-full hover:scale-110 text-content link"
             target="_blank"
           >
             <Linkedin />
           </Link>
           <Link
             href="https://github.com/HossinHabil"
-            className="bg-[#67e9ff] dark:bg-[#57c3ad] p-2 rounded-full text-white dark:text-white"
+            className="bg-[#67e9ff] p-2 rounded-full text-content link"
             target="_blank"
           >
             <Github />
@@ -50,6 +56,7 @@ const HomeSection = () => {
         width={450}
         height={450}
         className="rounded-full"
+        id="hero_img"
       />
     </section>
   );
