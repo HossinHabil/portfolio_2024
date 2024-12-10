@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -20,13 +20,14 @@ const config = {
     },
     extend: {
       colors: {
+        content: "hsl(var(--content))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        'gradient-start': 'rgba(0,0,0,0.8)',
-        'gradient-end': 'rgb(13, 148, 136)',
+        "gradient-start": "rgba(0,0,0,0.8)",
+        "gradient-end": "rgb(13, 148, 136)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -57,7 +58,7 @@ const config = {
         },
       },
       linerGradientColors: {
-        'custom-gradient': ['gradient-start', 'gradient-end'],
+        "custom-gradient": ["gradient-start", "gradient-end"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -81,6 +82,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

@@ -6,7 +6,10 @@ import Link from "next/link";
 
 const LatestProjects = () => {
   return (
-    <section id="projects" className="relative flex flex-col gap-8 items-center justify-between text-center w-full md:px-8 pb-16 md:py-20">
+    <section
+      id="projects"
+      className="relative flex flex-col gap-8 items-center justify-between text-center w-full md:px-8 pb-16 md:py-20"
+    >
       <div
         className="absolute inset-x-0 top-28 -z-10 transform-gpu overflow-hidden blur-3xl"
         aria-hidden="true"
@@ -20,10 +23,10 @@ const LatestProjects = () => {
         />
       </div>
       <div className="flex flex-col w-full">
-        <h2 className="text-3xl md:text-4xl font-medium dark:text-[#57c3ad]">
+        <h2 className="text-3xl md:text-4xl font-medium text-content">
           My Latest Projects
         </h2>
-        <p className="text-lg md:text-2xl font-normal dark:text-[#57c3ad]">
+        <p className="text-lg md:text-2xl font-normal text-content">
           Some of the projects I&apos;ve worked on
         </p>
       </div>
@@ -32,7 +35,7 @@ const LatestProjects = () => {
           <LatestProjectsItem key={project.id} {...project} />
         ))}
       </div>
-      <Link href="/projects" >
+      <Link href="/projects">
         <Button className="bg-[#67e9ff] hover:bg-[#62d7eb] transition-all dark:bg-accent dark:hover:bg-slate-700 text-white border-none rounded-md mx-auto">
           View All Projects
         </Button>

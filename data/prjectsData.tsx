@@ -8,25 +8,29 @@ export const NavBarLinks = [
     id: 1,
     icon: Home as IconType,
     name: "home",
-    link: "#home",
+    link: "home",
+    href: "#home",
   },
   {
     id: 2,
     icon: UserRound as IconType,
     name: "user-round",
-    link: "#about",
+    link: "about",
+    href: "#about",
   },
   {
     id: 3,
     icon: Code2 as IconType,
     name: "code-2",
-    link: "#projects",
+    link: "projects",
+    href: "#projects",
   },
   {
     id: 4,
     icon: MessageSquare as IconType,
     name: "message-square",
-    link: "#contact",
+    link: "contact",
+    href: "#contact",
   },
 ];
 

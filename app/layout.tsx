@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 
 import { Analytics } from "@vercel/analytics/react";
 
-const poppins = Poppins({
+const sora = Sora({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
@@ -17,6 +17,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Hossin Habil | Front End Web Developer",
   description: "Front End Web Developer",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -26,10 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={poppins.className}>
+      <body className={sora.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

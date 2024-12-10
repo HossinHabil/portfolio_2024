@@ -1,18 +1,53 @@
-import Link from "next/link";
+"use client";
+
+import { useState, useEffect } from "react";
 import dynamicIconImports from "lucide-react/dynamicIconImports";
-import Icon from "./Icon";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { NavBarLinks } from "@/data/prjectsData";
+import Icon from "./Icon";
 
 const Navbar = () => {
+  const [activeSection, setActiveSection] = useState("home");
+
+  const handleScroll = () => {
+    const sections = NavBarLinks.map(
+      (link) => document.querySelector(link.href) as HTMLElement
+    );
+
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section, index) => {
+      if (
+        section &&
+        section.offsetTop <= scrollPosition &&
+        section.offsetTop + section.offsetHeight > scrollPosition
+      ) {
+        setActiveSection(NavBarLinks[index].link);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav className="fixed bottom-4 w-full text-center z-50">
-      <ul className="flex items-center justify-evenly gap-5 w-80 bg-gradient-to-r from-[#67e9ff] to-[#62d7eb] mx-auto p-4 rounded-2xl">
+      <ul className="flex items-center justify-evenly gap-5 w-80 bg-gradient-to-r from-[#67e9ff] to-[#62d7eb] shadow-lg mx-auto p-2 rounded-3xl">
         {NavBarLinks.map((link) => (
           <Link
-            href={link.link}
+            to={link.link}
+            smooth={true}
             key={link.id}
-            className="text-lg font-semibold text-white dark:text-white"
-            scroll={true}
+            duration={500}
+            className={`text-lg font-semibold p-3 cursor-pointer ${
+              activeSection === link.link
+                ? "bg-[#7ac5d2] rounded-full text-white"
+                : "text-content"
+            }`}
           >
             <Icon
               name={link.name as keyof typeof dynamicIconImports}
