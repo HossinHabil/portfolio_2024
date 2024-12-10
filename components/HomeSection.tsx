@@ -35,14 +35,14 @@ const HomeSection = () => {
         <div className="flex items-center gap-5">
           <Link
             href="https://www.linkedin.com/in/hossin-habil-183866121/"
-            className="bg-[#67e9ff] p-2 rounded-full hover:scale-110 text-content link"
+            className="bg-black bg-opacity-20 p-3 rounded-full hover:scale-110 ease-in-out duration-150 text-content link"
             target="_blank"
           >
             <Linkedin />
           </Link>
           <Link
             href="https://github.com/HossinHabil"
-            className="bg-[#67e9ff] p-2 rounded-full text-content link"
+            className="bg-black bg-opacity-20 p-3 rounded-full hover:scale-110 ease-in-out duration-150 text-content link"
             target="_blank"
           >
             <Github />

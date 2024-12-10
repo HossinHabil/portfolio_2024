@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 const ResumeButton = () => {
   return (
     <a href="/Hossin_Habil_CV.pdf" rel="noreferrer" download>
-      <Button className="bg-[#67e9ff] hover:bg-[#62d7eb] transition-all dark:bg-accent dark:hover:bg-slate-700 text-white border-none rounded-md mx-auto">
+      <Button className="bg-[#313c52] hover:bg-[#3E4A64] hover:shadow-sm transition-all text-white border-none rounded-md mx-auto">
         Resume
       </Button>
     </a>
