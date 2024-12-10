@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Linkedin, Github } from "lucide-react";
 
-import hero_img from "@/images/sections/hero_img.jpg";
+import hero_img from "@/images/sections/hero_img.webp";
 
 const HomeSection = () => {
   return (

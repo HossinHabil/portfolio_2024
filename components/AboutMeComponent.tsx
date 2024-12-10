@@ -1,5 +1,5 @@
 import Image from "next/image";
-import about_me from "@/images/sections/about_me.jpg";
+import about_me from "@/images/sections/about_me.webp";
 import { TbBrandNextjs } from "react-icons/tb";
 import { RiReactjsFill } from "react-icons/ri";
 import { SiTailwindcss, SiPrisma } from "react-icons/si";
