@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import dynamicIconImports from "lucide-react/dynamicIconImports";
 import { Link, animateScroll as scroll } from "react-scroll";
-import Icon from "./Icon";
 import { NavBarLinks } from "@/data/prjectsData";
+import Icon from "./Icon";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
