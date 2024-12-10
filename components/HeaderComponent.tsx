@@ -10,7 +10,7 @@ const HeaderComponent = () => {
       <nav className="flex items-center p-10 max-w-7xl mx-auto">
         <Link
           href="/"
-          className="bg-[#67e9ff] p-2 rounded-full text-content nav_link"
+          className="bg-[#313c52] hover:bg-[#3E4A64] hover:shadow-sm transition-all text-white p-2 rounded-full text-content nav_link"
         >
           <Code2 />
         </Link>

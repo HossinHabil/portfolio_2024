@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed bottom-4 w-full text-center z-50">
-      <ul className="flex items-center justify-evenly gap-5 w-80 bg-gradient-to-r from-[#67e9ff] to-[#62d7eb] shadow-lg mx-auto p-2 rounded-3xl">
+      <ul className="flex items-center justify-evenly gap-5 w-80 bg-custom-gradient shadow-lg mx-auto p-2 rounded-3xl">
         {NavBarLinks.map((link) => (
           <Link
             to={link.link}
@@ -45,8 +45,8 @@ const Navbar = () => {
             duration={500}
             className={`text-lg font-semibold p-3 cursor-pointer ${
               activeSection === link.link
-                ? "bg-[#7ac5d2] rounded-full text-white"
-                : "text-content"
+                ? "bg-black bg-opacity-20 hover:bg-opacity-30 rounded-full text-white"
+                : "text-content hover:bg-black hover:bg-opacity-30 rounded-full"
             }`}
           >
             <Icon

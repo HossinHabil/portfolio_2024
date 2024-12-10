@@ -36,7 +36,7 @@ const LatestProjects = () => {
         ))}
       </div>
       <Link href="/projects">
-        <Button className="bg-[#67e9ff] hover:bg-[#62d7eb] transition-all dark:bg-accent dark:hover:bg-slate-700 text-white border-none rounded-md mx-auto">
+        <Button className="bg-custom-gradient transition-all ease-in-out text-white shadow-lg border-none rounded-md mx-auto">
           View All Projects
         </Button>
       </Link>

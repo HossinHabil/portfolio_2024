@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(90deg, rgba(15,22,36,1) 0%, rgba(24,38,65,1) 40%, rgba(49,60,82,1) 90%)",
+      },
       colors: {
         content: "hsl(var(--content))",
         border: "hsl(var(--border))",
@@ -31,6 +35,8 @@ const config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          background:
+            "linear-gradient(90deg, rgba(15,22,36,1) 0%, rgba(24,38,65,1) 40%, rgba(49,60,82,1) 90%)",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
