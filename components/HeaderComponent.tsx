@@ -11,6 +11,7 @@ const HeaderComponent = () => {
         <Link
           href="/"
           className="bg-[#313c52] hover:bg-[#3E4A64] hover:shadow-sm transition-all text-white p-2 rounded-full text-content nav_link"
+          aria-label="Home"
         >
           <Code2 />
         </Link>

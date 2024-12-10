@@ -36,24 +36,29 @@ const Navbar = () => {
 
   return (
     <nav className="fixed bottom-4 w-full text-center z-50">
-      <ul className="flex items-center justify-evenly gap-5 w-80 bg-custom-gradient shadow-lg mx-auto p-2 rounded-3xl">
+      <ul className="flex items-center justify-evenly gap-5 h-16 w-80 bg-custom-gradient shadow-lg mx-auto p-2 rounded-3xl">
         {NavBarLinks.map((link) => (
-          <Link
-            to={link.link}
-            smooth={true}
+          <li
             key={link.id}
-            duration={500}
-            className={`text-lg font-semibold p-3 cursor-pointer ${
+            className={`h-full flex items-center justify-center cursor-pointer ${
               activeSection === link.link
                 ? "bg-black bg-opacity-20 hover:bg-opacity-30 rounded-full text-white"
                 : "text-content hover:bg-black hover:bg-opacity-30 rounded-full"
             }`}
+            aria-label={link.name}
           >
-            <Icon
-              name={link.name as keyof typeof dynamicIconImports}
-              className="h-[20px] md:h-[25px]"
-            />
-          </Link>
+            <Link
+              to={link.link}
+              smooth={true}
+              duration={500}
+              className="text-lg font-semibold p-3"
+            >
+              <Icon
+                name={link.name as keyof typeof dynamicIconImports}
+                className="h-[20px] md:h-[25px]"
+              />
+            </Link>
+          </li>
         ))}
       </ul>
     </nav>

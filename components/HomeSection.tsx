@@ -37,6 +37,7 @@ const HomeSection = () => {
             href="https://www.linkedin.com/in/hossin-habil-183866121/"
             className="bg-black bg-opacity-20 p-3 rounded-full hover:scale-110 ease-in-out duration-150 text-content link"
             target="_blank"
+            aria-label="Linkedin"
           >
             <Linkedin />
           </Link>
@@ -44,6 +45,7 @@ const HomeSection = () => {
             href="https://github.com/HossinHabil"
             className="bg-black bg-opacity-20 p-3 rounded-full hover:scale-110 ease-in-out duration-150 text-content link"
             target="_blank"
+            aria-label="Github"
           >
             <Github />
           </Link>

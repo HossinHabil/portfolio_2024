@@ -27,6 +27,7 @@ const LatestProjectsItem = ({
         fill
         sizes="100%"
         className="rounded-2xl absolute w-full h-full object-fill group-hover:scale-110 transition-all duration-500 ease-in-out"
+        aria-label={title}
       />
       <CardContent className="absolute left-0 bottom-0 w-full h-0 p-0 group-hover:h-full group-hover:flex flex-col space-y-8 items-center transition-[height] duration-500 ease-in-out justify-center bg-gradient-to-r from-[#67e9ff] to-[#62d7eb]">
         <h5 className="text-xl lg:text-5xl font-semibold text-white">
