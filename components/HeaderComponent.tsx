@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Code2 } from "lucide-react";
 
-import { DarkModeToggle } from "@/components/DarkModeToggle";
 import ResumeButton from "@/components/ResumeButton";
 
 const HeaderComponent = () => {
@@ -17,7 +16,6 @@ const HeaderComponent = () => {
         </Link>
 
         <div className="flex flex-1 items-center justify-end space-x-4 nav_link">
-          {/* <DarkModeToggle /> */}
           <ResumeButton />
         </div>
       </nav>
