@@ -26,7 +26,7 @@ const HomeSection = () => {
       className="flex flex-col lg:flex-row gap-8 items-center justify-between w-full md:px-8 py-16 md:py-20 lg:pb-28"
     >
       <SpotLight />
-      <div className="flex flex-col items-center justify-center space-y-3">
+      <div className="flex flex-col items-center text-center justify-center space-y-3">
         <h2 className="text-3xl md:text-4xl font-extrabold text-content">
           Hossin Habil
         </h2>
