@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import HeaderComponent from "@/components/HeaderComponent";
+import Navbar from "@/components/Navbar";
 
 import { Toaster } from "sonner";
 
 import { Analytics } from "@vercel/analytics/react";
 
-const sora = Sora({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
+const sora = localFont({
+  src: "./fonts/Sora-VariableFont_wght.ttf",
+  variable: "--font-sora",
+  weight: "400 500 600 700",
 });
 
 export const metadata: Metadata = {
@@ -37,6 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <HeaderComponent />
+          <Navbar />
           <Toaster position="top-left" />
           {children}
         </ThemeProvider>
