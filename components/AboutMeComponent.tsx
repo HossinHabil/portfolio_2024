@@ -30,7 +30,7 @@ const AboutMeComponent = () => {
           About Me
         </h2>
         <p className="text-lg md:text-2xl font-normal text-content">
-          Mid Front-End Developer with 3 years of experience using some of the
+          Mid Front-End Developer with over 4 years of experience using some of the
           most powerful technologies like...
         </p>
         <div className="flex items-center gap-5">
