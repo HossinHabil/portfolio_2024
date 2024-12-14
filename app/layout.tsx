@@ -4,7 +4,6 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import HeaderComponent from "@/components/HeaderComponent";
-import Navbar from "@/components/Navbar";
 
 import { Toaster } from "sonner";
 
@@ -39,7 +38,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <HeaderComponent />
-          <Navbar />
           <Toaster position="top-left" />
           {children}
         </ThemeProvider>

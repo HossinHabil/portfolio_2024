@@ -2,6 +2,7 @@ import AboutMeComponent from "@/components/AboutMeComponent";
 import ContactSection from "@/components/ContactSection";
 import HomeSection from "@/components/HomeSection";
 import LatestProjects from "@/components/LatestProjects";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
       <LatestProjects />
 
       <ContactSection />
+
+      <Navbar />
     </main>
   );
 }
