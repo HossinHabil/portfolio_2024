@@ -3,11 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import HeaderComponent from "@/components/HeaderComponent";
 
 import { Toaster } from "sonner";
 
 import { Analytics } from "@vercel/analytics/react";
+import CookiesBanner from "@/components/CookiesBanner";
 
 const sora = localFont({
   src: "./fonts/Sora-VariableFont_wght.ttf",
@@ -37,10 +37,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <HeaderComponent />
           <Toaster position="top-left" />
           {children}
         </ThemeProvider>
+        {/* <CookiesBanner /> */}
         <Analytics />
       </body>
     </html>
