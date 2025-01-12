@@ -24,12 +24,8 @@ const CookiesBanner = () => {
     return null;
   }
 
-  const acceptCookies = () => {
+  const confirm = () => {
     Cookies.set("cookiesAccepted", "true", { expires: 365 });
-    setVisible(false);
-  };
-
-  const declineCookies = () => {
     setVisible(false);
   };
 
@@ -38,17 +34,18 @@ const CookiesBanner = () => {
   }
 
   return (
-    <Dialog open>
-      <DialogContent>
-        <DialogHeader>
+    <Dialog open onOpenChange={confirm}>
+      <DialogContent className="space-y-4 rounded-xl">
+        <DialogHeader className="space-y-4 !text-center">
           <DialogTitle>Welcome to my website 😊</DialogTitle>
           <DialogDescription>
-            This website uses cookies to improve user experience.
+            This website uses Vercel Web Analytics to understand traffic and
+            improve user experience. No personally identifiable information is
+            collected.
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="flex justify-between">
-          <Button onClick={acceptCookies}>Accept</Button>
-          <Button onClick={declineCookies}>Decline</Button>
+        <DialogFooter className="flex !justify-center">
+          <Button onClick={confirm}>Confirm</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
