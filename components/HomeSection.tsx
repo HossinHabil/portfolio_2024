@@ -51,9 +51,9 @@ const HomeSection = () => {
         priority
         src={hero_img}
         alt="Home Image"
-        width={450}
-        height={450}
-        className="rounded-full"
+        className="w-[350px] md:w-[450px] rounded-full"
+        sizes="(max-width: 768px) 350px, 450px"
+        placeholder="blur"
         id="hero_img"
       />
     </section>

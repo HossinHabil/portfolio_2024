@@ -20,9 +20,8 @@ const AboutMeComponent = () => {
         priority
         src={about_me}
         alt="Home Image"
-        width={450}
-        height={450}
-        className="rounded-full z-10"
+        className="w-[350px] md:w-[450px] rounded-full"
+        sizes="(max-width: 768px) 350px, 450px"
         id="about_img"
       />
       <div className="flex flex-col text-center items-center justify-center space-y-3">
@@ -30,8 +29,8 @@ const AboutMeComponent = () => {
           About Me
         </h2>
         <p className="text-lg md:text-2xl font-normal text-content">
-          Mid Front-End Developer with over 4 years of experience using some of the
-          most powerful technologies like...
+          Mid Front-End Developer with over 4 years of experience using some of
+          the most powerful technologies like...
         </p>
         <div className="flex items-center gap-5">
           <RiReactjsFill className="text-3xl sm:text-4xl lg:text-5xl" />

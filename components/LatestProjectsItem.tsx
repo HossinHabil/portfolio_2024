@@ -24,9 +24,10 @@ const LatestProjectsItem = ({
       <Image
         src={image}
         alt={title}
-        fill
+        width={400}
+        height={400}
         sizes="100%"
-        className="rounded-2xl absolute w-full h-full object-fill group-hover:scale-110 transition-all duration-500 ease-in-out"
+        className="rounded-2xl absolute w-full h-60 object-cover group-hover:scale-110 transition-all duration-500 ease-in-out"
         aria-label={title}
       />
       <CardContent className="absolute left-0 bottom-0 w-full h-0 p-0 group-hover:h-full group-hover:flex flex-col space-y-8 items-center transition-[height] duration-500 ease-in-out justify-center bg-gradient-to-r from-[#67e9ff] to-[#62d7eb]">
