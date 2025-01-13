@@ -24,8 +24,7 @@ const LatestProjectsItem = ({
       <Image
         src={image}
         alt={title}
-        width={400}
-        height={400}
+        fill
         sizes="100%"
         className="rounded-2xl absolute w-full h-60 object-cover group-hover:scale-110 transition-all duration-500 ease-in-out"
         aria-label={title}
