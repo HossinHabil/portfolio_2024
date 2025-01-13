@@ -1,25 +1,25 @@
 import Image from "next/image";
 import about_me from "@/images/sections/about_me.webp";
-import { TbBrandNextjs } from "react-icons/tb";
-import { RiReactjsFill } from "react-icons/ri";
-import { SiTailwindcss, SiPrisma } from "react-icons/si";
+import TechnologyIcons from "./TechnologyIcons";
 
 const AboutMeComponent = () => {
   return (
     <section
       id="about"
-      className="relative flex flex-col lg:flex-row gap-8 items-center justify-between w-full md:px-8 pb-16 md:py-20"
+      className="relative flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between w-full md:px-8 pb-16 md:py-20"
     >
       <div
-        className={`absolute bottom-4 right-20 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000 dark:hidden`}
+        aria-hidden="true"
+        className={`absolute bottom-4 right-20 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animation-delay-4000 dark:hidden`}
       ></div>
       <div
-        className={`absolute top-0 left-0 md:left-0 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000 dark:hidden`}
+        aria-hidden="true"
+        className={`absolute top-0 left-0 md:left-0 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animation-delay-4000 dark:hidden`}
       ></div>
       <Image
         priority
         src={about_me}
-        alt="Home Image"
+        alt="AboutMe Image"
         className="w-[350px] md:w-[450px] rounded-full"
         sizes="(max-width: 768px) 350px, 450px"
         id="about_img"
@@ -32,12 +32,7 @@ const AboutMeComponent = () => {
           Mid Front-End Developer with over 4 years of experience using some of
           the most powerful technologies like...
         </p>
-        <div className="flex items-center gap-5">
-          <RiReactjsFill className="text-3xl sm:text-4xl lg:text-5xl" />
-          <TbBrandNextjs className="text-3xl sm:text-4xl lg:text-5xl" />
-          <SiTailwindcss className="text-3xl sm:text-4xl lg:text-5xl" />
-          <SiPrisma className="text-3xl sm:text-4xl lg:text-5xl" />
-        </div>
+        <TechnologyIcons />
       </div>
     </section>
   );

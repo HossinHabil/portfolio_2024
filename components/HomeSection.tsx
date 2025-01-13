@@ -1,23 +1,42 @@
 import Image from "next/image";
 import { Linkedin, Github } from "lucide-react";
+import { memo } from "react";
 
 import hero_img from "@/images/sections/hero_img.webp";
 import SpotLight from "./SpotLight";
+
+const MemoizedLinkedin = memo(Linkedin);
+const MemoizedGithub = memo(Github);
 
 const links = [
   {
     id: 1,
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/hossin-habil-183866121/",
-    icon: <Linkedin />,
+    icon: <MemoizedLinkedin />,
   },
   {
     id: 2,
     name: "GitHub",
     href: "https://github.com/HossinHabil",
-    icon: <Github />,
+    icon: <MemoizedGithub />,
   },
 ];
+
+const renderLinks = () =>
+  links.map((link) => (
+    <a
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer" // Add for security
+      className="bg-black bg-opacity-20 p-3 rounded-full hover:scale-110 ease-in-out duration-150 text-content link"
+      key={link.id}
+      aria-label={link.name}
+    >
+      {link.icon}
+    </a>
+  ));
+
 
 const HomeSection = () => {
   return (
@@ -34,17 +53,7 @@ const HomeSection = () => {
           Front End Web Developer
         </p>
         <div className="flex items-center gap-5">
-          {links.map((link) => (
-            <a
-              href={link.href}
-              target="_blank"
-              className="bg-black bg-opacity-20 p-3 rounded-full hover:scale-110 ease-in-out duration-150 text-content link"
-              key={link.id}
-              aria-label={link.name}
-            >
-              {link.icon}
-            </a>
-          ))}
+          {renderLinks()}
         </div>
       </div>
       <Image

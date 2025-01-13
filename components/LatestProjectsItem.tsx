@@ -36,10 +36,10 @@ const LatestProjectsItem = ({
         </h5>
         <p className="text-xl text-white">{description}</p>
         <div className="flex justify-center gap-12">
-          <Link href={source} target="_blank">
+          <Link href={source} target="_blank" aria-label="Github">
             <AiFillGithub className="text-xl text-white w-[30px] h-[30px] lg:w-[50px] lg:h-[50px]" />
           </Link>
-          <Link href={visit} target="_blank">
+          <Link href={visit} target="_blank" aria-label="Visit">
             <IoRocketOutline className="text-xl text-white w-[30px] h-[30px] lg:w-[50px] lg:h-[50px]" />
           </Link>
         </div>
